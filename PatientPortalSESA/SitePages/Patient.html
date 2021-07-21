@@ -3,8 +3,65 @@
 <head>
     <meta charset="utf-8" />
     <title>Patient Module</title>
+
+    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.common.min.css" />
+    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.default.min.css" />
+    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.default.mobile.min.css" />
+
+    <script src="../Scripts/kendo/2021.2.616/jquery.min.js"></script>
+    <script src="../Scripts/kendo/2021.2.616/kendo.core.min.js"></script>
+    <script src="../Scripts/kendo/2021.2.616/kendo.ui.core.min.js"></script>
+    <script src="../Scripts/kendo/2021.2.616/kendo.data.min.js"></script>
+    <script src="../Scripts/kendo/2014.1.318/kendo.grid.min.js"></script>
+    <script src="../Scripts/kendo/2014.1.318/kendo.web.min.js"></script>
 </head>
 <body>
-    <p>This is the Patient.html page</p>
+    <script src="../SiteAssets/Patients.js"></script>
+    <div id="patient-grid">
+        <div id="grid">
+            <script>
+                $(document).ready(function () {
+                    $("#grid").kendoGrid({
+                        dataSource: {
+                            data: patients,
+                            schema: {
+                                model: {
+                                    fields: {
+                                        ID: { type: "number" },
+                                        FirstName: { type: "string" },
+                                        LastName: { type: "string" },
+                                        Title: { type: "string" },
+                                        Street: { type: "string" },
+                                        City: { type: "string" },
+                                        State: { type: "string" },
+                                        Zip: { type: "string" },
+                                    }
+                                }
+                            },
+                            pageSize: 20
+                        },
+                        height: 550,
+                        scrollable: true,
+                        sortable: true,
+                        filterable: true,
+                        pageable: {
+                            input: true,
+                            numeric: false
+                        },
+                        columns: [
+                            { field: "Title", title: "Title", width: "40px" },
+                            { field: "FirstName", title: "First Name", width: "100px" },
+                            { field: "LastName", title: "Last Name", width: "100px" },                            
+                            { field: "Street", title: "Street", width: "100px" },
+                            { field: "City", title: "City", width: "100px" },
+                            { field: "State", title: "State", width: "100px" },
+                            { field: "Zip", title: "Zip Code", width: "100px" }
+                        ]
+                    });
+                });
+            </script>
+        </div>
+
+    </div>
 </body>
 </html>
