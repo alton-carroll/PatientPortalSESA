@@ -1,5 +1,5 @@
 ﻿var patients = [{
-    ID: 1,
+    PatientId: 1,
     FirstName: "John",
     LastName: "Smith",
     Title: "Mr.",
@@ -9,7 +9,7 @@
     Zip: "123456"
 
 }, {
-    ID: 2,
+    PatientId: 2,
     FirstName: "Jane",
     LastName: "Johnson",
     Title: "Ms.",
@@ -19,7 +19,7 @@
     Zip: "123456"
 
 }, {
-    ID: 3,
+    PatientId: 3,
     FirstName: "Pat",
     LastName: "Smithers",
     Title: "Mrs.",

@@ -27,7 +27,7 @@
                             schema: {
                                 model: {
                                     fields: {
-                                        ID: { type: "number" },
+                                        PatientId: { type: "number" },
                                         FirstName: { type: "string" },
                                         LastName: { type: "string" },
                                         Title: { type: "string" },
@@ -49,6 +49,7 @@
                             numeric: false
                         },
                         columns: [
+                            { field: "PatientId", title: "Id", width: "40px" },
                             { field: "Title", title: "Title", width: "40px" },
                             { field: "FirstName", title: "First Name", width: "100px" },
                             { field: "LastName", title: "Last Name", width: "100px" },                            
