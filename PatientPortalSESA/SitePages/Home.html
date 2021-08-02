@@ -1,38 +1,92 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Home Page">
-    <meta name="author" content="Alton Carroll">
-    <meta charset="utf-8" />
-    <title>Home Module</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Home Page" />
+	<meta name="author" content="Alton Carroll" />
+	<meta charset="utf-8" />
+	<title>Home Module</title>
 
-    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.default-v2.min.css" />
-    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.common.min.css" />
-    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.default.min.css" />
-    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.mobile.all.min.css" />
-    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.rtl.min.css" />
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.2.616/styles/kendo.default-v2.min.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <script src="../Scripts/kendo/2014.1.318/jquery.min.js"></script>
-    <script src="../Scripts/kendo/2014.1.318/kendo.grid.min.js"></script>
-    <script src="../Scripts/kendo/2014.1.318/kendo.web.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2021.2.616/js/jquery.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2021.2.616/js/kendo.all.min.js"></script>
+
+	<style>
+		li {
+			padding-left: 50px;
+		}
+	</style>
 </head>
 <body>
-    <div class="k-content">
-        <h4>Select a Module</h4>
-        <ul>
-            <li>
-                <a href="https://localhost:44345/SitePages/Home.html">Home</a>
-            </li>
-            <li>
-                <a href="https://localhost:44345/SitePages/Patient.html">Patient</a>
-            </li>
-            <li>
-                <a href="https://localhost:44345/SitePages/Appointments.html">Appointment</a>
-            </li>
-        </ul>
-    </div>
-    
+	<!--ToDo's
+		-put navbar in a template
+		-dynamically change li class to "nav-item active" & aria-current to "true" for active page
+		-dynamically change aria-disabled to true on administration if not authenticated
+		-add href for administration link
+	-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light d-xl-flex">
+		<div class="container">
+			<a class="navbar-brand" href="Home.html"><img class="d-inline-block" src="../SiteAssets/Medical-Icon.png" alt="" width="90" height="90" /></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end nav-pills" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="Home.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Patient.html">Patients</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="Appointments.html">Appointments</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Administration</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
+	<div class="container">
+		<div class="row row-cols-3">
+			<div class="col">
+				<div class="card">
+					<img class="card-img-top" src="../SiteAssets/placeholder.png" />
+					<div class="card-body">
+						<p class="card-text">Placeholder for Module Links</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<img class="card-img-top" src="../SiteAssets/placeholder.png" />
+					<div class="card-body">
+						<p class="card-text">Placeholder for Module Links</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<img class="card-img-top" src="../SiteAssets/placeholder.png" />
+					<div class="card-body">
+						<p class="card-text">Placeholder for Module Links</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--
+	 -Complete footer content
+	-->
+	<footer class="footer mt-auto py-3 bg-light  ">
+		<div class="container justify-content-center">
+			<span class="text-muted"><img class="img-fluid" src="../SiteAssets/Spinsys-Icon.png" alt="Spinsys Icon" height="50" width="100"/></span>
+		</div>
+	</footer>
 </body>
 </html>

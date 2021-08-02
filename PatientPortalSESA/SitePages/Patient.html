@@ -4,65 +4,50 @@
     <meta charset="utf-8" />
     <title>Patient Module</title>
 
-    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.common.min.css" />
-    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.default.min.css" />
-    <link rel="stylesheet" href="../Content/kendo/2021.2.616/kendo.default.mobile.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.2.616/styles/kendo.default-v2.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <script src="../Scripts/kendo/2021.2.616/jquery.min.js"></script>
-    <script src="../Scripts/kendo/2021.2.616/kendo.core.min.js"></script>
-    <script src="../Scripts/kendo/2021.2.616/kendo.ui.core.min.js"></script>
-    <script src="../Scripts/kendo/2021.2.616/kendo.data.min.js"></script>
-    <script src="../Scripts/kendo/2014.1.318/kendo.grid.min.js"></script>
-    <script src="../Scripts/kendo/2014.1.318/kendo.web.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.616/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.616/js/kendo.all.min.js"></script>
+
+    <style>
+        li {
+            padding-left: 50px;
+        }
+    </style>
+
 </head>
 <body>
-    <script src="../SiteAssets/Patients.js"></script>
-    <div id="patient-grid">
-        <div id="grid">
-            <script>
-                $(document).ready(function () {
-                    $("#grid").kendoGrid({
-                        dataSource: {
-                            data: patients,
-                            schema: {
-                                model: {
-                                    fields: {
-                                        PatientId: { type: "number" },
-                                        FirstName: { type: "string" },
-                                        LastName: { type: "string" },
-                                        Title: { type: "string" },
-                                        Street: { type: "string" },
-                                        City: { type: "string" },
-                                        State: { type: "string" },
-                                        Zip: { type: "string" },
-                                    }
-                                }
-                            },
-                            pageSize: 20
-                        },
-                        height: 550,
-                        scrollable: true,
-                        sortable: true,
-                        filterable: true,
-                        pageable: {
-                            input: true,
-                            numeric: false
-                        },
-                        columns: [
-                            { field: "PatientId", title: "Id", width: "40px" },
-                            { field: "Title", title: "Title", width: "40px" },
-                            { field: "FirstName", title: "First Name", width: "100px" },
-                            { field: "LastName", title: "Last Name", width: "100px" },                            
-                            { field: "Street", title: "Street", width: "100px" },
-                            { field: "City", title: "City", width: "100px" },
-                            { field: "State", title: "State", width: "100px" },
-                            { field: "Zip", title: "Zip Code", width: "100px" }
-                        ]
-                    });
-                });
-            </script>
+    <!--ToDo's
+        -put navbar in a template
+        -dynamically change li class to "nav-item active" & aria-current to "true" for active page
+        -dynamically change aria-disabled to true on administration if not authenticated
+        -add href for administration link
+    -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-xl-flex">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="d-inline-block" src="../SiteAssets/Medical-Icon.png" alt="" width="80" height="80" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end nav-pills" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Patient.html">Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Appointments.html">Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Administration</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-    </div>
 </body>
 </html>
